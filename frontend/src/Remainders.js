@@ -41,7 +41,7 @@ export default function ReminderForm() {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ reminderMsg, selectedDates, selectedTimes, email }),
                 });
-
+                console.log(response)
                 if (response.ok) {
                     setSubmitted(true);
                     setReminderMsg("");

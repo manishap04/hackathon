@@ -11,19 +11,26 @@ app.use(bodyParser.json());
 
 let reminders = []; // In-memory reminder storage
 
-// Nodemailer setup
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.EMAIL_PASSWORD,
     },
+    logger: true,
+    debug: true,
+    tls: {
+        rejectUnauthorized: false
+    }
 });
+
 
 // Set reminder endpoint
 app.post("/api/setReminder", (req, res) => {
     const { reminderMsg, selectedDates, selectedTimes, email } = req.body;
-
+    console.log(req.body)
     if (!reminderMsg || !email || selectedDates.length === 0 || selectedTimes.length === 0) {
         return res.status(400).json({ error: "All fields are required" });
     }
@@ -36,7 +43,6 @@ app.post("/api/setReminder", (req, res) => {
 
     console.log(`Reminders set for ${email} on ${selectedDates.join(", ")} at times: ${selectedTimes.join(", ")}`);
     res.status(200).json({ message: "Reminder scheduled successfully!" });
-    res.send({message:"Hi"})
 });
 
 // Cron job to check every minute
