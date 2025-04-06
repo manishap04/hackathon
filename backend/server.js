@@ -36,6 +36,7 @@ app.post("/api/setReminder", (req, res) => {
 
     console.log(`Reminders set for ${email} on ${selectedDates.join(", ")} at times: ${selectedTimes.join(", ")}`);
     res.status(200).json({ message: "Reminder scheduled successfully!" });
+    res.send({message:"Hi"})
 });
 
 // Cron job to check every minute
