@@ -1,0 +1,102 @@
+/* General container for the form */
+.reminder-form {
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+
+    /* Center the form vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height for vertical centering */
+}
+
+/* Column wrapper for form content to center it inside the form */
+.col-md-6 {
+    width: 100%; /* Full width */
+    max-width: 500px; /* Optional: Limit the max width for a nice layout */
+}
+
+/* Row for form alignment */
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+/* Form title */
+.form-title {
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Spacing for label and input fields */
+.form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #34495e;
+}
+
+/* Custom button styling */
+.reminder-btn {
+    background-color: #1abc9c;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.reminder-btn:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+/* Input field styles */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Success alert styling */
+.alert {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px; /* Adding space before the success alert message */
+}
+
+/* Pop-out effect for success alert */
+.alert-pop {
+    animation: popOut 0.3s ease-in-out;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transform: scale(1.05);
+}
+
+/* Keyframes for pop-out effect */
+@keyframes popOut {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
